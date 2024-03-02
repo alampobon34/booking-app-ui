@@ -2,26 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+/* .hero{
+  background-image: url('../../public/assets/hero.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 360px;
+} */
+
+
+@layer utilities {
+  .container {
+    @apply max-w-[1440px] w-[90%] mx-auto;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  .nav-links {
+    @apply relative tracking-[1px];
+  }
+
+  .nav-links::after {
+    @apply content-[''] bg-primary h-[2px] w-[0%] left-0 -bottom-[5px] absolute duration-300 rounded-sm;
+  }
+
+  .nav-links:hover::after {
+    @apply w-[100%];
+  }
+
 }
