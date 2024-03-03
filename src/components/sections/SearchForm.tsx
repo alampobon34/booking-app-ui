@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Radio from '../inputs/Radio'
 import DateInput from '../inputs/DateInput';
 import Label from '../inputs/Label';
@@ -8,32 +8,18 @@ import Input from '../inputs/Input';
 import { FaChevronDown } from "react-icons/fa";
 import { checkEmptyOrNullInput } from '../../utils/validation';
 import { useRouter } from 'next/navigation';
+import { City, Error, FlightForm, Hotel, HotelForm } from '@/types';
+import axios from 'axios';
+import { getListApiRequest } from '@/utils/axios';
+import { MdKeyboardArrowDown } from "react-icons/md";
+import ErrorTitle from '../titles/ErrorTitle';
 
-interface HotelForm {
-    city: string;
-    checkInDate: string;
-    checkOutDate: string;
-    room: number;
-    adult: number;
-    children: number;
-}
 
-interface Error {
-    fieldName: string;
-    error: string;
-}
-
-interface FlightForm {
-    departureCity: string;
-    arrivalCity: string;
-    departureDate: string;
-    returnDate: string;
-    adult: number;
-    children: number;
-}
 
 const SearchForm = () => {
     const router = useRouter();
+    const [cities, setCities] = useState<City[]>([]);
+    const [hotelList, setHotelList] = useState<Hotel[]>([]);
     const [formType, setFormType] = useState<string>('hotel');
     const [toggleHotelSubForm, setToggleHotelSubForm] = useState<boolean>(false);
     const [toggleFlightSubForm, setToggleFlightSubForm] = useState<boolean>(false);
@@ -59,6 +45,25 @@ const SearchForm = () => {
 
     const handleFormType = (e: React.ChangeEvent<HTMLInputElement>) => {
         setErrors({ fieldName: '', error: '' });
+        if (e.target.value === 'hotel') {
+            setFlightForm({
+                departureCity: '',
+                arrivalCity: '',
+                departureDate: '',
+                returnDate: '',
+                adult: 1,
+                children: 0
+            });
+        } else {
+            setHotelForm({
+                city: '',
+                checkInDate: '',
+                checkOutDate: '',
+                room: 1,
+                adult: 1,
+                children: 0
+            })
+        }
         setFormType(e.target.value);
     }
 
@@ -80,12 +85,36 @@ const SearchForm = () => {
         setFlightForm({ ...flightForm, [name]: value });
     }
 
+    useEffect(() => {
+        async function getCityList() {
+            try {
+                const data: City[] = await getListApiRequest<City[]>('/city');
+                setCities(data);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+
+        async function getHotelList() {
+            try {
+                const data: Hotel[] = await getListApiRequest<Hotel[]>('/hotel');
+                setHotelList(data);
+            } catch (error) {
+                console.log(error);
+            }
+
+        }
+        getCityList();
+        getHotelList();
+    }, [])
+
     const submitForm = (e: any) => {
         e.preventDefault();
         setErrors({ fieldName: '', error: '' });
         if (formType && formType === 'hotel') {
             if (checkEmptyOrNullInput(hotelForm.city)) {
-                setErrors({ fieldName: 'city', error: 'City is required' });
+                setErrors({ fieldName: 'city', error: 'City is required.' });
                 return;
             }
             if (checkEmptyOrNullInput(hotelForm.checkInDate)) {
@@ -102,7 +131,7 @@ const SearchForm = () => {
                 setErrors({ fieldName: 'checkOutDate', error: 'Select a greater date than Check In Date.' });
                 return;
             }
-            router.push(`/hotel/?city=${hotelForm.city}&checkInDate=${hotelForm.checkInDate}&checkOutDate=${hotelForm.checkOutDate}&room=${hotelForm.room}&adult=${hotelForm.adult}&children=${hotelForm.children}`);
+            router.push(`/hotel/?city=${hotelForm.city}&checkInDate=${hotelForm.checkInDate}&checkOutDate=${hotelForm.checkOutDate}&room=${hotelForm.room}&adult=${hotelForm.adult}&children=${hotelForm.children}&desc=${0}&page=${1}&minRange=${0}&maxRange=`);
             console.log('hotel form', hotelForm)
         } else if (formType && formType === 'flight') {
             if (checkEmptyOrNullInput(flightForm.departureCity)) {
@@ -114,7 +143,7 @@ const SearchForm = () => {
                 return;
             }
             if (checkEmptyOrNullInput(flightForm.departureDate)) {
-                setErrors({ fieldName: 'departureDate', error: 'departure Date is required.' });
+                setErrors({ fieldName: 'departureDate', error: 'Departure Date is required.' });
                 return;
             }
             if (!checkEmptyOrNullInput(flightForm.returnDate)) {
@@ -131,8 +160,6 @@ const SearchForm = () => {
 
     }
 
-
-
     return (
         <div className='bg-white rounded-xl p-5 w-[90%] mx-auto border flex flex-col gap-2'>
             <div className='flex items-center gap-3'>
@@ -148,9 +175,9 @@ const SearchForm = () => {
                                     <div className='flex flex-col w-full gap-2'>
                                         <select className='w-full outline-none py-3 bg-transparent rounded-md' id='city' name='city' value={hotelForm.city} onChange={(e) => setHotelForm({ ...hotelForm, city: e.target.value })}>
                                             <option value="" selected>--select-city--</option>
-                                            <option value="cox's bazar">Cox's Bazar</option>
-                                            <option value="dhaka">Dhaka</option>
-                                            <option value="syhlet">Sylhet</option>
+                                            {
+                                                cities && cities.map((city, index) => <option key={index} value={city.cityName.toLocaleLowerCase()}>{city.cityName}</option>)
+                                            }
                                         </select>
                                     </div>
                                 </div>
@@ -170,7 +197,9 @@ const SearchForm = () => {
                                     <div className='w-full flex flex-col py-1.5 px-2 bg-gray-100 cursor-pointer'>
                                         <div className='flex justify-between items-center' onClick={handleToggleHotelSubForm}>
                                             <input readOnly type='text' name='rooms-info' placeholder={`${hotelForm.room} rooms - ${hotelForm.adult} adults - ${hotelForm.children} children`} className='bg-gray-100 w-full outline-none py-2 ' />
-                                            <span><FaChevronDown className='w-4 h-4' /></span>
+                                            <span>
+                                                <MdKeyboardArrowDown className='w-4 h-4 md:w-5 md:h-5' />
+                                            </span>
                                         </div>
                                     </div>
                                     {
@@ -200,17 +229,17 @@ const SearchForm = () => {
                             <div className='flex items-center'>
                                 <div className='w-1/4'>
                                     {
-                                        errors?.fieldName === 'city' && <span className='text-red-600 text-xs'>{errors.error}</span>
+                                        errors?.fieldName === 'city' && <ErrorTitle error={errors.error} />
                                     }
                                 </div>
                                 <div className='w-1/4'>
                                     {
-                                        errors?.fieldName === 'checkInDate' && <span className='ml-1 text-red-600 text-xs'>{errors.error}</span>
+                                        errors?.fieldName === 'checkInDate' && <ErrorTitle error={errors.error} />
                                     }
                                 </div>
                                 <div className='w-1/4'>
                                     {
-                                        errors?.fieldName === 'checkOutDate' && <span className='ml-1 text-red-600 text-xs'>{errors.error}</span>
+                                        errors?.fieldName === 'checkOutDate' && <ErrorTitle error={errors.error} />
                                     }
                                 </div>
                                 <div className='w-1/4'>
@@ -229,9 +258,9 @@ const SearchForm = () => {
                                     <div className='flex flex-col w-full gap-2'>
                                         <select className='w-full outline-none py-3 bg-transparent rounded-md' id='departureCity' name='departureCity' value={flightForm.departureCity} onChange={(e) => setFlightForm({ ...flightForm, departureCity: e.target.value })}>
                                             <option value="" selected>--departure-city--</option>
-                                            <option value="cox's bazar">Cox's Bazar</option>
-                                            <option value="dhaka">Dhaka</option>
-                                            <option value="syhlet">Sylhet</option>
+                                            {
+                                                cities && cities.map((city, index) => <option key={index} value={city.cityName.toLocaleLowerCase()}>{city.cityName}</option>)
+                                            }
                                         </select>
                                     </div>
                                 </div>
@@ -239,9 +268,9 @@ const SearchForm = () => {
                                     <div className='flex flex-col w-full gap-2'>
                                         <select className='w-full outline-none py-3 bg-transparent rounded-md' id='arrivalCity' name='arrivalCity' value={flightForm.arrivalCity} onChange={(e) => setFlightForm({ ...flightForm, arrivalCity: e.target.value })}>
                                             <option value="" selected>--arrival-city--</option>
-                                            <option value="cox's bazar">Cox's Bazar</option>
-                                            <option value="dhaka">Dhaka</option>
-                                            <option value="syhlet">Sylhet</option>
+                                            {
+                                                cities && cities.map((city, index) => <option key={index} value={city.cityName.toLocaleLowerCase()}>{city.cityName}</option>)
+                                            }
                                         </select>
                                     </div>
                                 </div>
@@ -261,7 +290,7 @@ const SearchForm = () => {
                                     <div className='w-full flex flex-col py-1.5 px-2 bg-gray-100 cursor-pointer'>
                                         <div className='flex justify-between items-center' onClick={handleToggleFlightSubForm}>
                                             <input readOnly type='text' name='rooms-info' placeholder={`${hotelForm.adult} adults - ${hotelForm.children} children`} className='bg-gray-100 w-full outline-none py-2 ' />
-                                            <span><FaChevronDown className='w-4 h-4' /></span>
+                                            <span><MdKeyboardArrowDown className='w-4 h-4 md:w-5 md:h-5' /></span>
                                         </div>
                                     </div>
                                     {
@@ -287,22 +316,22 @@ const SearchForm = () => {
                             <div className='flex items-center'>
                                 <div className='w-1/2'>
                                     {
-                                        errors?.fieldName === 'departureCity' && <span className='text-red-600 text-xs'>{errors.error}</span>
+                                        errors?.fieldName === 'departureCity' && <ErrorTitle error={errors.error} />
                                     }
                                 </div>
                                 <div className='w-1/2'>
                                     {
-                                        errors?.fieldName === 'arrivalCity' && <span className='ml-2 text-red-600 text-xs'>{errors.error}</span>
+                                        errors?.fieldName === 'arrivalCity' && <ErrorTitle error={errors.error} styles='ml-2' />
                                     }
                                 </div>
                                 <div className='w-1/2'>
                                     {
-                                        errors?.fieldName === 'departureDate' && <span className='ml-4 text-red-600 text-xs'>{errors.error}</span>
+                                        errors?.fieldName === 'departureDate' && <ErrorTitle error={errors.error} styles='ml-4' />
                                     }
                                 </div>
                                 <div className='w-1/2'>
                                     {
-                                        errors?.fieldName === 'returnDate' && <span className='ml-4 text-red-600 text-xs'>{errors.error}</span>
+                                        errors?.fieldName === 'returnDate' && <ErrorTitle error={errors.error} styles='ml-2' />
                                     }
                                 </div>
                                 <div className='w-1/2'>
@@ -314,7 +343,6 @@ const SearchForm = () => {
                         </form>
                     </div>
             }
-
         </div>
     )
 }

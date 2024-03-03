@@ -1,0 +1,66 @@
+
+export const DESTINATIONS = [
+    {
+        id: "1",
+        title: "Beach",
+        image: "/assets/Destination/01.jpg",
+        packages: 10,
+        price: 20000,
+    },
+    {
+        id: "2",
+        title: "City",
+        image: "/assets/Destination/02.jpg",
+        packages: 50,
+        price: 80000,
+    },
+    {
+        id: "3",
+        title: "Hill",
+        image: "/assets/Destination/03.jpg",
+        packages: 30,
+        price: 50000,
+    },
+    {
+        id: "1",
+        title: "Beach",
+        image: "/assets/Destination/01.jpg",
+        packages: 10,
+        price: 20000,
+    },
+    {
+        id: "2",
+        title: "City",
+        image: "/assets/Destination/02.jpg",
+        packages: 50,
+        price: 80000,
+    },
+    {
+        id: "3",
+        title: "Hill",
+        image: "/assets/Destination/03.jpg",
+        packages: 30,
+        price: 50000,
+    },
+    {
+        id: "1",
+        title: "Beach",
+        image: "/assets/Destination/01.jpg",
+        packages: 10,
+        price: 20000,
+    },
+    {
+        id: "2",
+        title: "City",
+        image: "/assets/Destination/02.jpg",
+        packages: 50,
+        price: 80000,
+    },
+    {
+        id: "3",
+        title: "Hill",
+        image: "/assets/Destination/03.jpg",
+        packages: 30,
+        price: 50000,
+    },
+];

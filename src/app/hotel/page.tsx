@@ -1,19 +1,18 @@
-import React from 'react'
-
+import HotelSearch from '@/components/sections/HotelSearch';
+import { Hotel, HotelSearchParams } from '@/types';
+import { getListApiRequest } from '@/utils/axios';
 interface Props {
-    searchParams: any
+    searchParams: HotelSearchParams
 }
-const page = ({ searchParams }: Props) => {
-    console.log(searchParams);
+const page = async ({ searchParams }: Props) => {
+    // console.log(searchParams);
+    const data = await getListApiRequest<Hotel[]>(`/hotel/?city=${searchParams.city}&checkInDate=${searchParams.checkInDate}&checkOutDate=${searchParams.checkOutDate}&room=${searchParams.room}&adult=${searchParams.adult}&children=${searchParams.children}&desc=${searchParams.desc}&page=${searchParams.page}&minRange=${searchParams.minRange}&maxRange=${searchParams.maxRange}`);
     return (
-        <div>
-            <h1>{searchParams.city}</h1>
-            <h1>{searchParams.checkInDate}</h1>
-            <h1>{searchParams.checkOutDate}</h1>
-            <h1>{searchParams.room}</h1>
-            <h1>{searchParams.adult}</h1>
-            <h1>{searchParams.children}</h1>
-        </div>
+        <section>
+            <div className='container'>
+                <HotelSearch hotelList={data} searchParams={searchParams} />
+            </div>
+        </section>
     )
 }
 

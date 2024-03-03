@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import React, { useEffect } from 'react'
 import SearchForm from './SearchForm'
+import Button from '../buttons/Button'
 
 const Hero = () => {
     useEffect(() => {
@@ -20,9 +21,14 @@ const Hero = () => {
     return (
         <section className="relative mb-6 md:mb-24">
             <Image src="/assets/hero.jpeg" height={360} width={1440} alt='' />
-            <div className='absolute top-[10%] left-[5%] text-white'>
-                <h1 className=' text-4xl text-bold'>Find your next tour</h1>
-                <p className='mt-2 text-xl'>Where you want to go?</p>
+            <div className='absolute top-[2%] lg:top-[20%] left-[5%] text-white flex flex-col gap-2 lg:gap-5'>
+                <div className='flex flex-col gap-0'>
+                    <h1 className='text-2xl md:text-5xl font-bold'>Find Your Next Tour</h1>
+                    <p className='mt-2 text-md md:text-xl font-normal'>Where you want to go?</p>
+                </div>
+                <div className='w-[40%]'>
+                    <Button name='Explore' type='button' />
+                </div>
             </div>
             <div className='xs:absolute sm:absolute md:-bottom-20 w-full mt-6'>
                 <SearchForm />
@@ -31,4 +37,4 @@ const Hero = () => {
     )
 }
 
-export default Hero
+export default Hero;

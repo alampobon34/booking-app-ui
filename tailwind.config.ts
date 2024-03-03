@@ -15,7 +15,11 @@ const config: Config = {
       },
 
       colors: {
-        'primary': '#003B95'
+        'primary': '#003B95',
+        'custom-black-900': '#101828',
+        'custom-black-600': '#475467',
+
+        'border-color': '#EAECF0'
       }
     },
   },

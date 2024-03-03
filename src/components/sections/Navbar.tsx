@@ -15,7 +15,7 @@ const Navbar = () => {
     }
 
     return (
-        <nav className='w-full h-12 sticky top-0 bg-white py-2 z-50'>
+        <nav className='w-full h-12 sticky top-0 bg-white py-2 z-50 border-b'>
             <div className='flex justify-between items-center container'>
                 <div>
                     <Link className='text-2xl font-bold text-primary' href="/">BOOKING.APP</Link>

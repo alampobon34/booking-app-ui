@@ -11,6 +11,27 @@
   height: 360px;
 } */
 
+@font-face {
+  font-family: HOVES;
+  src: url("../../public/assets/fonts/TT Hoves Pro Trial Regular.woff");
+}
+
+
+body {
+  font-family: HOVES;
+}
+
+
+
+select::before {
+
+  appearance: none;
+}
+
+select::after {
+  appearance: none;
+}
+
 
 @layer utilities {
   .container {
