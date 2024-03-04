@@ -32,22 +32,22 @@ export async function GET(request: NextRequest) {
                     selectHotel = false;
                 }
                 if (minRange && hotel.price < minRange) {
-                    return selectHotel = false;
+                    selectHotel = false;
                 }
                 if (maxRange && hotel.price > maxRange) {
-                    return selectHotel = false;
+                    selectHotel = false;
                 }
-                if (adult && hotel.maxAdultPerson !== adult) {
-                    return selectHotel = false;
+                if (adult && hotel.maxAdultPerson > adult) {
+                    selectHotel = false;
                 }
                 if (children && hotel.maxChildren > children) {
-                    return selectHotel = false;
+                    selectHotel = false;
                 }
-                if (room && hotel.room !== room) {
-                    return selectHotel = false;
+                if (room && hotel.room > room) {
+                    selectHotel = false;
                 }
                 if (rating && rating > 0 && hotel.review && hotel.review < rating) {
-                    return selectHotel = false;
+                    selectHotel = false;
                 }
                 return selectHotel;
             })
