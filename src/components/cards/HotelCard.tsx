@@ -1,18 +1,32 @@
+
 import { Hotel } from '@/types'
 import Image from 'next/image'
 import React from 'react'
 import Button from '../buttons/Button'
 import Link from 'next/link'
 import { getRatings } from '@/utils/ratings'
-
+import { CiHeart } from "react-icons/ci";
 interface Prop {
     hotel: Hotel
 }
 
 const HotelCard = ({ hotel }: Prop) => {
+    const handleBookmark = () => {
+        const hotelIds = localStorage.getItem('HOTEL_IDS');
+        if (hotelIds) {
+            const list = hotelIds.split(',');
+            if (!list.includes('' + hotel.id)) {
+                list.push('' + hotel.id);
+                localStorage.setItem('HOTEL_IDS', list.join(','));
+            }
+        } else {
+            localStorage.setItem('HOTEL_IDS', '' + hotel.id);
+        }
+
+    }
     return (
         <div className="flex flex-col gap-y-2 md:flex-row bg-white mb-3 p-3 border-[1.5px] border-border-color rounded-xl">
-            <div className="md:w-1/4">
+            <div className="md:w-1/4 relative">
                 <Image
                     className="h-full w-full rounded-md"
                     src={hotel.imageUrl}
@@ -21,6 +35,7 @@ const HotelCard = ({ hotel }: Prop) => {
                     alt=""
                     objectFit="cover"
                 />
+                <button onClick={handleBookmark} className='absolute top-2 right-2 w-8 h-8 bg-gray-100 border rounded-full flex items-center justify-center' ><CiHeart className='w-6 h-6 hover:text-primary' /></button>
             </div>
             <div className="w-full md:w-3/4 px-2 flex flex-col md:gap-y-2 md:ml-2">
                 <div className="flex justify-between items-start">

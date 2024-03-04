@@ -1,20 +1,21 @@
+import FlightSearch from '@/components/sections/FlightSearch';
+import { Flight, FlightSearchParams, Pagination } from '@/types';
+import { getListWithPagination } from '@/utils/axios';
 import React from 'react'
 
 interface Props {
-    searchParams: any
+    searchParams: FlightSearchParams
 }
-const page = ({ searchParams }: Props) => {
-    console.log(searchParams);
+
+const page = async ({ searchParams }: Props) => {
+    // console.log(searchParams);
+    const data = await getListWithPagination<Flight[]>(`/flight/?departureCity=${searchParams.departureCity}&arrivalCity=${searchParams.arrivalCity}&departureDate=${searchParams.departureDate}&returnDate=${searchParams.returnDate}&adult=${searchParams.adult}&children=${searchParams.children}&desc=${searchParams.desc}&page=${searchParams.page}&minRange=${searchParams.minRange}&maxRange=${searchParams.maxRange}&airLinesName=${searchParams.airLinesName}`);
     return (
-        <div>
-            <h1>Flight search result page</h1>
-            <h1>{searchParams.departureCity}</h1>
-            <h1>{searchParams.arrivalCity}</h1>
-            <h1>{searchParams.departureDate}</h1>
-            <h1>{searchParams.returnDate}</h1>
-            <h1>{searchParams.adult}</h1>
-            <h1>{searchParams.children}</h1>
-        </div>
+        <section>
+            <div className='container'>
+                <FlightSearch flightList={data} searchParams={searchParams} />
+            </div>
+        </section>
     )
 }
 

@@ -2,13 +2,13 @@ import Image from 'next/image'
 import React from 'react'
 
 
-interface CategoryCardProps {
+interface Props {
     title: string,
     packages?: number,
     price?: number,
     image: string
 }
-const DestinationCard = ({ title, packages, price, image }: CategoryCardProps) => {
+const DestinationCard = ({ title, packages, price, image }: Props) => {
     return (
         <div className="w-full h-[350px] my-2 rounded-md md:w-80 md:h-[330px] inline-block mr-5">
             <div>

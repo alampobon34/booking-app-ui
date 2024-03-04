@@ -5,6 +5,15 @@ interface ApiResponse<T> {
   status: number
 }
 
+
+interface ApiResponseWithPagination<T> {
+  data: T;
+  status: number;
+  total: number;
+  from: number;
+  to: number;
+}
+
 const BACKEND_API_URL = 'http://localhost:3000/api'
 
 const api = axios.create({
@@ -24,6 +33,17 @@ export async function getListApiRequest<T>(url: string): Promise<T> {
     } else {
       return [] as T;
     }
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    throw error;
+  }
+}
+
+export async function getListWithPagination<T>(url: string): Promise<ApiResponseWithPagination<T>> {
+  try {
+    const response: AxiosResponse<ApiResponseWithPagination<T>> = await api.get<ApiResponseWithPagination<T>>(url);
+    // console.log(response.data);
+    return response.data;
   } catch (error) {
     console.error('Error fetching data:', error);
     throw error;

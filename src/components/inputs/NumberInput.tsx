@@ -9,13 +9,12 @@ interface Props {
     min?: string;
     max?: string;
     value?: number | null;
-    height: number
 }
 
-const NumberInput = ({ name, type, placeholder, onChange, min, max, value, height }: Props) => {
+const NumberInput = ({ name, type, placeholder, onChange, min, max, value }: Props) => {
     return (
         <input onChange={onChange} value={value ? value : ''} type={type} name={name} min={min} max={max} placeholder={placeholder}
-            className={`w-full h-[${height}px] outline-none rounded-sm border border-primary-color pl-2`} />
+            className={`w-full outline-none border border-primary-color pl-2 py-2 rounded-md`} />
     )
 }
 

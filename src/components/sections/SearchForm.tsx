@@ -131,7 +131,7 @@ const SearchForm = () => {
                 setErrors({ fieldName: 'checkOutDate', error: 'Select a greater date than Check In Date.' });
                 return;
             }
-            router.push(`/hotel/?city=${hotelForm.city}&checkInDate=${hotelForm.checkInDate}&checkOutDate=${hotelForm.checkOutDate}&room=${hotelForm.room}&adult=${hotelForm.adult}&children=${hotelForm.children}&desc=${0}&page=${1}&minRange=${0}&maxRange=`);
+            router.push(`/hotel/?city=${hotelForm.city}&checkInDate=${hotelForm.checkInDate}&checkOutDate=${hotelForm.checkOutDate}&room=${hotelForm.room}&adult=${hotelForm.adult}&children=${hotelForm.children}&desc=${0}&page=${1}&minRange=${0}&maxRange=&ratings=`);
             console.log('hotel form', hotelForm)
         } else if (formType && formType === 'flight') {
             if (checkEmptyOrNullInput(flightForm.departureCity)) {
@@ -154,7 +154,7 @@ const SearchForm = () => {
                     return;
                 }
             }
-            router.push(`/flight/?departureCity=${flightForm.departureCity}&arrivalCity=${flightForm.arrivalCity}&departureDate=${flightForm.departureDate}&returnDate=${flightForm.returnDate}&adult=${flightForm.adult}&children=${flightForm.children}`);
+            router.push(`/flight/?departureCity=${flightForm.departureCity}&arrivalCity=${flightForm.arrivalCity}&departureDate=${flightForm.departureDate}&returnDate=${flightForm.returnDate}&adult=${flightForm.adult}&children=${flightForm.children}&desc=${0}&page=${1}&minRange=${0}&maxRange=&airLinesName=`);
             console.log('flight form', flightForm);
         }
 
@@ -298,11 +298,11 @@ const SearchForm = () => {
                                             <div className='p-4 flex flex-col gap-2'>
                                                 <div className='flex justify-between items-center'>
                                                     <h1>Adults</h1>
-                                                    <Input min={1} value={hotelForm.adult} styles='w-[40%] pl-2 py-1 outline-none bg-gray-50 border rounded-md' name='adult' type='number' placeholder='adult' readonly={false} onChange={handleHotelForm} />
+                                                    <Input min={1} value={flightForm.adult} styles='w-[40%] pl-2 py-1 outline-none bg-gray-50 border rounded-md' name='adult' type='number' placeholder='adult' readonly={false} onChange={handleFlightForm} />
                                                 </div>
                                                 <div className='flex justify-between items-center'>
                                                     <h1>Children</h1>
-                                                    <Input min={0} value={hotelForm.children} styles='w-[40%] pl-2 py-1 outline-none bg-gray-50 border rounded-md' name='children' type='number' placeholder='children' readonly={false} onChange={handleHotelForm} />
+                                                    <Input min={0} value={flightForm.children} styles='w-[40%] pl-2 py-1 outline-none bg-gray-50 border rounded-md' name='children' type='number' placeholder='children' readonly={false} onChange={handleFlightForm} />
                                                 </div>
                                                 <div>
                                                     <Button onClick={handleToggleFlightSubForm} name='Submit' type='button' />

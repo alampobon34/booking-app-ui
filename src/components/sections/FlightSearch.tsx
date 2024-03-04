@@ -1,38 +1,37 @@
 'use client'
-import { Hotel, HotelSearchParams, Pagination } from '@/types'
-import React, { useEffect, useState } from 'react'
-import Checkbox from '../inputs/Checkbox';
+import { Flight, FlightSearchParams, Pagination } from '@/types';
 import { useRouter } from 'next/navigation';
-import HotelCard from '../cards/HotelCard';
-import api, { getListApiRequest } from '@/utils/axios';
-import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 import NumberInput from '../inputs/NumberInput';
 import { GrPowerReset } from 'react-icons/gr';
 import { IoSearchOutline } from 'react-icons/io5';
+import Checkbox from '../inputs/Checkbox';
+import FlightCard from '../cards/FlightCard';
 
 interface Data extends Pagination {
-    data: Hotel[];
+    data: Flight[];
 }
 
 interface Props {
-    searchParams: HotelSearchParams;
-    hotelList: Data
+    searchParams: FlightSearchParams;
+    flightList: Data
 }
 
-const HotelSearch = ({ searchParams, hotelList }: Props) => {
-    // console.log(searchParams);
+
+
+const FlightSearch = ({ searchParams, flightList }: Props) => {
+    console.log(searchParams);
     const router = useRouter();
-    const [searchParam, setSearchParam] = useState<HotelSearchParams>(searchParams);
+    const [searchParam, setSearchParam] = useState<FlightSearchParams>(searchParams);
     const [currentPage, setCurrentPage] = useState<number>(1);
-    const [dataList, setDataList] = useState<Data>(hotelList);
+    const [dataList, setDataList] = useState<Data>(flightList);
     const [desc, setDesc] = useState<number>(searchParam?.desc === 1 ? 1 : 0);
     const [minValue, setMinValue] = useState<number>(0);
     const [maxValue, setMaxValue] = useState<number | null>(null);
-    const [rating, setRating] = useState<number | null>(searchParam.ratings ?? 0);
+    const [airLinesName, setAirLinesName] = useState<string>(searchParam.airLinesName ?? '');
 
     const handleDesc = (event: any) => {
         const value = event.target.value;
-        console.log(value);
         setDesc(value);
         setSearchParam({ ...searchParam, desc: value === 1 ? 1 : 0 })
     }
@@ -40,8 +39,8 @@ const HotelSearch = ({ searchParams, hotelList }: Props) => {
     const reset = () => {
         setMaxValue(null);
         setMinValue(0);
-        setRating(null);
-        setSearchParam({ ...searchParam, minRange: 0, maxRange: null, ratings: null })
+        setAirLinesName('');
+        setSearchParam({ ...searchParam, minRange: 0, maxRange: null, airLinesName: '' })
     }
 
     const handleAmountSearch = () => {
@@ -51,12 +50,12 @@ const HotelSearch = ({ searchParams, hotelList }: Props) => {
     const handleCheckBox = (event: React.ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value;
         const checked = event.target.checked;
-        setSearchParam({ ...searchParam, ratings: checked ? +value : null })
-        setRating(checked ? +value : null);
+        setSearchParam({ ...searchParam, airLinesName: checked ? value : '' })
+        setAirLinesName(checked ? value : '');
     }
 
     useEffect(() => {
-        router.push(`/hotel/?city=${searchParam.city}&checkInDate=${searchParam.checkInDate}&checkOutDate=${searchParam.checkOutDate}&room=${searchParam.room}&adult=${searchParam.adult}&children=${searchParam.children}&desc=${desc}&page=${currentPage}&minRange=${searchParam.minRange}&maxRange=${searchParam.maxRange ?? ''}&ratings=${searchParam.ratings ?? ''}`);
+        router.push(`/flight/?departureCity=${searchParams.departureCity}&arrivalCity=${searchParams.arrivalCity}&departureDate=${searchParams.departureDate}&returnDate=${searchParams.returnDate}&adult=${searchParams.adult}&children=${searchParams.children}&desc=${desc}&page=${currentPage}&minRange=${minValue}&maxRange=${maxValue}&airLinesName=${airLinesName??''}`);
     }, [searchParam])
     return (
         <div className='w-full flex flex-col py-4 gap-2'>
@@ -66,14 +65,14 @@ const HotelSearch = ({ searchParams, hotelList }: Props) => {
                 </div>
                 <div className='w-full md:w-3/4 flex justify-end md:justify-between items-center flex-1'>
                     <div className='flex-1'>
-                        <h1 className='hidden md:block text-lg md:text-xl font-bold'>{searchParam.city ? searchParam.city.toUpperCase() : ''} : {hotelList.data && hotelList.total ? hotelList.total : ''} Records Found.</h1>
+                        {/* <h1 className='hidden md:block text-lg md:text-xl font-bold'>{searchParam.city ? searchParam.city.toUpperCase() : ''} : {flightList.data && flightList.total ? flightList.total : ''} Records Found.</h1> */}
                     </div>
                     <select value={desc} onChange={handleDesc} className="border p-2 rounded-md outline-none text-sm">
                         <option className='text-sm' value="0">Low-High</option>
                         <option className='text-sm' value="1">High-Low</option>
                     </select>
                 </div>
-                <h1 className='text-lg text-end md:text-xl font-bold md:hidden'>{searchParam.city ? searchParam.city.toUpperCase() : ''} : {hotelList.data && hotelList.total ? hotelList.total : ''} Records Found.</h1>
+                {/* <h1 className='text-lg text-end md:text-xl font-bold md:hidden'>{searchParam.city ? searchParam.city.toUpperCase() : ''} : {flightList.data && flightList.total ? flightList.total : ''} Records Found.</h1> */}
             </div>
 
             <div className='flex flex-col md:flex-row gap-3'>
@@ -101,7 +100,7 @@ const HotelSearch = ({ searchParams, hotelList }: Props) => {
                             <h1 className='pl-2 text-lg font-semibold'>Ratings</h1>
                             <div className="flex flex-col gap-3 px-2">
                                 {
-                                    [1, 2, 3, 4, 5].map((el, index) => <Checkbox label='Star' name='rating' onChange={handleCheckBox} value={el} isChecked={rating === el} />)
+                                    [1, 2, 3, 4, 5].map((el, index) => <Checkbox label='Star' name='rating' onChange={handleCheckBox} value={el} isChecked={airLinesName === "" + el} />)
                                 }
                             </div>
                         </div>
@@ -111,8 +110,8 @@ const HotelSearch = ({ searchParams, hotelList }: Props) => {
                 <div className='w-full md:w-3/4'>
                     <div className=''>
                         {
-                            hotelList.data && hotelList.data.length > 0 ?
-                                hotelList.data.map((hotel, index) => <HotelCard hotel={hotel} key={index} />)
+                            flightList.data && flightList.data.length > 0 ?
+                                flightList.data.map((flight, index) => <FlightCard flight={flight} key={index} />)
                                 :
                                 <div className='w-full h-full'>
                                     <h1 className='flex justify-center items-center text-lg md:text-xl font-bold'>Sorry Not Data Found.</h1>
@@ -126,11 +125,11 @@ const HotelSearch = ({ searchParams, hotelList }: Props) => {
                 <div className='w-full md:w-1/4'>
                 </div>
                 <div className='w-3/4 flex justify-between items-center'>
-                    <p className='text-[14px] font-semibold text-custom-black-600'>Showing {hotelList.from + 1} - {hotelList.to + 1}</p>
+                    <p className='text-[14px] font-semibold text-custom-black-600'>Showing {flightList.from + 1} - {flightList.to + 1}</p>
                     <div className='flex justify-end items-center flex-1'>
                         <div className='flex gap-2'>
-                            <button disabled={hotelList.from === 0} onClick={() => { setCurrentPage(currentPage - 1); setSearchParam({ ...searchParam, page: currentPage - 1 }) }} className='hover:text-primary text-custom-black-900' type='button'>Previous</button>
-                            <button disabled={hotelList.to === hotelList.total} onClick={() => { setCurrentPage(currentPage + 1); setSearchParam({ ...searchParam, page: currentPage + 1 }) }} className='hover:text-primary text-custom-black-900' type='button'>Next</button>
+                            <button disabled={flightList.from === 0} onClick={() => { setCurrentPage(currentPage - 1); setSearchParam({ ...searchParam, page: currentPage - 1 }) }} className='hover:text-primary text-custom-black-900' type='button'>Previous</button>
+                            <button disabled={flightList.to === flightList.total} onClick={() => { setCurrentPage(currentPage + 1); setSearchParam({ ...searchParam, page: currentPage + 1 }) }} className='hover:text-primary text-custom-black-900' type='button'>Next</button>
                         </div>
                     </div>
                 </div>
@@ -140,4 +139,4 @@ const HotelSearch = ({ searchParams, hotelList }: Props) => {
     )
 }
 
-export default HotelSearch
+export default FlightSearch

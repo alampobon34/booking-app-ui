@@ -1,6 +1,4 @@
-import { Hotel } from "@/types";
-
-export const HOTELS: Hotel[] = [
+[
     {
         "title": "Reem Resort",
         "cityName": "Cox's Bazar",
@@ -10,9 +8,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 0,
         "maxChildrenAge": 0,
-        "isBooked": false,
-        "room": 1,
-        "id": 1
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Hotel Sea Alif",
@@ -23,9 +19,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 0,
         "maxChildrenAge": 0,
-        "isBooked": false,
-        "room": 1,
-        "id": 2
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Hotel Bay Wonders",
@@ -36,9 +30,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 0,
         "maxChildrenAge": 0,
-        "isBooked": false,
-        "room": 1,
-        "id": 3
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Hotel Vista Bay",
@@ -49,9 +41,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 0,
         "maxChildrenAge": 0,
-        "isBooked": false,
-        "room": 1,
-        "id": 4
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Rain View Resort",
@@ -62,9 +52,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 0,
         "maxChildrenAge": 0,
-        "isBooked": false,
-        "room": 1,
-        "id": 5
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Angel Resort & Restaurant",
@@ -75,9 +63,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 0,
         "maxChildrenAge": 0,
-        "isBooked": false,
-        "room": 1,
-        "id": 6
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Resort Islandia",
@@ -88,9 +74,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 0,
         "maxChildrenAge": 0,
-        "isBooked": false,
-        "room": 1,
-        "id": 7
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Cox Hill Tower",
@@ -101,9 +85,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 0,
         "maxChildrenAge": 0,
-        "isBooked": false,
-        "room": 1,
-        "id": 8
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Sandy Beach Resort & Restaurant",
@@ -114,9 +96,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 0,
         "maxChildrenAge": 0,
-        "isBooked": false,
-        "room": 1,
-        "id": 9
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Dream Palace Resort",
@@ -127,9 +107,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 0,
         "maxChildrenAge": 0,
-        "isBooked": false,
-        "room": 1,
-        "id": 10
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Cox's Bazar Surf Club Resort & Cafe",
@@ -140,9 +118,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 0,
         "maxChildrenAge": 0,
-        "isBooked": false,
-        "room": 1,
-        "id": 11
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Sea Breeze Resort",
@@ -153,9 +129,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 0,
         "maxChildrenAge": 0,
-        "isBooked": false,
-        "room": 1,
-        "id": 12
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Suite Sadaf",
@@ -166,9 +140,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 0,
         "maxChildrenAge": 0,
-        "isBooked": false,
-        "room": 1,
-        "id": 13
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Sea Pearl Beach Resort & Spa Cox's Bazar",
@@ -179,9 +151,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 0,
         "maxChildrenAge": 0,
-        "isBooked": false,
-        "room": 1,
-        "id": 14
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Maui Resort",
@@ -192,9 +162,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 0,
         "maxChildrenAge": 0,
-        "isBooked": false,
-        "room": 1,
-        "id": 15
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Inani Royal Resort",
@@ -205,9 +173,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 0,
         "maxChildrenAge": 0,
-        "isBooked": false,
-        "room": 1,
-        "id": 16
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Reem Resort",
@@ -218,9 +184,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 1,
         "maxChildrenAge": 3,
-        "isBooked": false,
-        "room": 1,
-        "id": 17
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Hotel Bay Wonders",
@@ -231,9 +195,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 1,
         "maxChildrenAge": 3,
-        "isBooked": false,
-        "room": 1,
-        "id": 18
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Rain View Resort",
@@ -244,9 +206,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 1,
         "maxChildrenAge": 3,
-        "isBooked": false,
-        "room": 1,
-        "id": 19
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Hotel Vista Bay",
@@ -257,9 +217,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 1,
         "maxChildrenAge": 3,
-        "isBooked": false,
-        "room": 1,
-        "id": 20
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Resort Islandia",
@@ -270,9 +228,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 1,
         "maxChildrenAge": 3,
-        "isBooked": false,
-        "room": 1,
-        "id": 21
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Cox Hill Tower",
@@ -283,9 +239,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 1,
         "maxChildrenAge": 3,
-        "isBooked": false,
-        "room": 1,
-        "id": 22
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Suite Sadaf",
@@ -296,9 +250,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 1,
         "maxChildrenAge": 3,
-        "isBooked": false,
-        "room": 1,
-        "id": 23
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Angel Resort & Restaurant",
@@ -309,9 +261,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 1,
         "maxChildrenAge": 3,
-        "isBooked": false,
-        "room": 1,
-        "id": 24
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Sea Breeze Resort",
@@ -322,9 +272,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 1,
         "maxChildrenAge": 3,
-        "isBooked": false,
-        "room": 1,
-        "id": 25
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Maui Resort",
@@ -335,9 +283,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 1,
         "maxChildrenAge": 3,
-        "isBooked": false,
-        "room": 1,
-        "id": 26
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Sandy Beach Resort & Restaurant",
@@ -348,9 +294,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 1,
         "maxChildrenAge": 3,
-        "isBooked": false,
-        "room": 1,
-        "id": 27
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Dream Palace Resort",
@@ -361,9 +305,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 1,
         "maxChildrenAge": 3,
-        "isBooked": false,
-        "room": 1,
-        "id": 28
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Cox's Bazar Surf Club Resort & Cafe",
@@ -374,9 +316,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 1,
         "maxChildrenAge": 3,
-        "isBooked": false,
-        "room": 1,
-        "id": 29
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Sea Pearl Beach Resort & Spa Cox's Bazar",
@@ -387,9 +327,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 1,
         "maxChildrenAge": 3,
-        "isBooked": false,
-        "room": 1,
-        "id": 30
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Inani Royal Resort",
@@ -400,10 +338,9 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 1,
         "maxChildrenAge": 3,
-        "isBooked": false,
-        "room": 1,
-        "id": 31
+        "isBooked": false, "room": 1,
     },
+
     {
         "title": "Hotel Vista Bay",
         "cityName": "Cox's Bazar",
@@ -413,9 +350,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 3,
         "maxChildrenAge": 5,
-        "isBooked": false,
-        "room": 1,
-        "id": 32
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Hotel Bay Wonders",
@@ -426,9 +361,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 3,
         "maxChildrenAge": 5,
-        "isBooked": false,
-        "room": 1,
-        "id": 33
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Rain View Resort",
@@ -439,9 +372,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 3,
         "maxChildrenAge": 5,
-        "isBooked": false,
-        "room": 1,
-        "id": 34
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Resort Islandia",
@@ -452,9 +383,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 3,
         "maxChildrenAge": 5,
-        "isBooked": false,
-        "room": 1,
-        "id": 35
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Suite Sadaf",
@@ -465,9 +394,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 3,
         "maxChildrenAge": 5,
-        "isBooked": false,
-        "room": 1,
-        "id": 36
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Maui Resort",
@@ -478,9 +405,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 3,
         "maxChildrenAge": 5,
-        "isBooked": false,
-        "room": 1,
-        "id": 37
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Cox Hill Tower",
@@ -491,9 +416,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 3,
         "maxChildrenAge": 5,
-        "isBooked": false,
-        "room": 1,
-        "id": 38
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Angel Resort & Restaurant",
@@ -504,9 +427,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 3,
         "maxChildrenAge": 5,
-        "isBooked": false,
-        "room": 1,
-        "id": 39
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Sea Breeze Resort",
@@ -517,9 +438,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 3,
         "maxChildrenAge": 5,
-        "isBooked": false,
-        "room": 1,
-        "id": 40
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Sandy Beach Resort & Restaurant",
@@ -530,9 +449,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 3,
         "maxChildrenAge": 5,
-        "isBooked": false,
-        "room": 1,
-        "id": 41
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Inani Royal Resort",
@@ -543,9 +460,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 3,
         "maxChildrenAge": 5,
-        "isBooked": false,
-        "room": 1,
-        "id": 42
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Hotel 71",
@@ -556,9 +471,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 2,
         "maxChildrenAge": 4,
-        "isBooked": false,
-        "room": 1,
-        "id": 43
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Star Residence",
@@ -569,9 +482,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 2,
         "maxChildrenAge": 4,
-        "isBooked": false,
-        "room": 1,
-        "id": 44
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Hotel Victory - Best in City Center",
@@ -582,9 +493,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 2,
         "maxChildrenAge": 4,
-        "isBooked": false,
-        "room": 1,
-        "id": 45
+        "isBooked": false, "room": 1,
     },
     {
         "title": "NAAS Serviced Apartments",
@@ -595,9 +504,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 2,
         "maxChildrenAge": 4,
-        "isBooked": false,
-        "room": 1,
-        "id": 46
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Hotel Royal Inn",
@@ -608,9 +515,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 2,
         "maxChildrenAge": 4,
-        "isBooked": false,
-        "room": 1,
-        "id": 47
+        "isBooked": false, "room": 1,
     },
     {
         "title": "HOTEL BLUE BIRD",
@@ -621,9 +526,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 2,
         "maxChildrenAge": 4,
-        "isBooked": false,
-        "room": 1,
-        "id": 48
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Hotel Royal Blue Residence",
@@ -634,9 +537,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 2,
         "maxChildrenAge": 4,
-        "isBooked": false,
-        "room": 1,
-        "id": 49
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Lovely 3BHK Airport Close Furnished Family Apartment",
@@ -647,9 +548,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 2,
         "maxChildrenAge": 4,
-        "isBooked": false,
-        "room": 1,
-        "id": 50
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Appayan Guest House (Baridhara)",
@@ -660,9 +559,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 2,
         "maxChildrenAge": 4,
-        "isBooked": false,
-        "room": 1,
-        "id": 51
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Sufia House Apartment",
@@ -673,9 +570,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 2,
         "maxChildrenAge": 4,
-        "isBooked": false,
-        "room": 1,
-        "id": 52
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Orchard Faruque Tower",
@@ -686,9 +581,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 2,
         "maxChildrenAge": 4,
-        "isBooked": false,
-        "room": 1,
-        "id": 53
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Hotel Grand Amir International",
@@ -699,9 +592,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 2,
         "maxChildrenAge": 4,
-        "isBooked": false,
-        "room": 1,
-        "id": 54
+        "isBooked": false, "room": 1,
     },
     {
         "title": "GR MEET & GREET",
@@ -712,9 +603,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 2,
         "maxChildrenAge": 4,
-        "isBooked": false,
-        "room": 1,
-        "id": 55
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Full Furnished apartment Dhaka",
@@ -725,9 +614,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 2,
         "maxChildrenAge": 4,
-        "isBooked": false,
-        "room": 1,
-        "id": 56
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Hotel City Panthapath",
@@ -738,9 +625,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 2,
         "maxChildrenAge": 4,
-        "isBooked": false,
-        "room": 1,
-        "id": 57
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Quality Inn Dhaka",
@@ -751,9 +636,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 2,
         "maxChildrenAge": 4,
-        "isBooked": false,
-        "room": 1,
-        "id": 58
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Calm & Cozy Guest Room with Free Breakfast-Parking",
@@ -764,9 +647,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 2,
         "maxChildrenAge": 4,
-        "isBooked": false,
-        "room": 1,
-        "id": 59
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Nagar Valley Hotel Ltd.",
@@ -777,9 +658,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 2,
         "maxChildrenAge": 4,
-        "isBooked": false,
-        "room": 1,
-        "id": 60
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Hotel Royal Palace Pvt Ltd",
@@ -790,9 +669,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 2,
         "maxChildrenAge": 4,
-        "isBooked": false,
-        "room": 1,
-        "id": 61
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Entire place-4BHK Apartment Bashundhara R/A",
@@ -803,9 +680,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 2,
         "maxChildrenAge": 4,
-        "isBooked": false,
-        "room": 1,
-        "id": 62
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Days Hotel Dhaka",
@@ -816,9 +691,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 2,
         "maxChildrenAge": 4,
-        "isBooked": false,
-        "room": 1,
-        "id": 63
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Hotel Blue Sky Inn Banani",
@@ -829,9 +702,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 2,
         "maxChildrenAge": 4,
-        "isBooked": false,
-        "room": 1,
-        "id": 64
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Hotel living international ltd.",
@@ -842,9 +713,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 2,
         "maxChildrenAge": 4,
-        "isBooked": false,
-        "room": 1,
-        "id": 65
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Hotel Surma Residential",
@@ -855,9 +724,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 2,
         "maxChildrenAge": 4,
-        "isBooked": false,
-        "room": 1,
-        "id": 66
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Lake View Uttara Secured Peaceful AC Near Airport with Free Lift + Car Parking",
@@ -868,10 +735,9 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 2,
         "maxChildren": 2,
         "maxChildrenAge": 4,
-        "isBooked": false,
-        "room": 1,
-        "id": 67
+        "isBooked": false, "room": 1,
     },
+
     {
         "title": "Holiday Home in Khastobir Sylhet Town",
         "cityName": "Sylhet",
@@ -881,9 +747,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 3,
         "maxChildren": 3,
         "maxChildrenAge": 5,
-        "isBooked": false,
-        "room": 1,
-        "id": 68
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Alom Manzil - 4 Bedroom Family Home",
@@ -894,9 +758,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 3,
         "maxChildren": 3,
         "maxChildrenAge": 5,
-        "isBooked": false,
-        "room": 1,
-        "id": 69
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Sheikh Vila",
@@ -907,9 +769,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 3,
         "maxChildren": 3,
         "maxChildrenAge": 5,
-        "isBooked": false,
-        "room": 1,
-        "id": 70
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Hotel Mira Garden",
@@ -920,9 +780,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 3,
         "maxChildren": 3,
         "maxChildrenAge": 5,
-        "isBooked": false,
-        "room": 1,
-        "id": 71
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Moshahid Ali House",
@@ -933,9 +791,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 3,
         "maxChildren": 3,
         "maxChildrenAge": 5,
-        "isBooked": false,
-        "room": 1,
-        "id": 72
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Kumar Para Deluxe Villa",
@@ -946,9 +802,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 3,
         "maxChildren": 3,
         "maxChildrenAge": 5,
-        "isBooked": false,
-        "room": 1,
-        "id": 73
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Mirabazar",
@@ -959,9 +813,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 3,
         "maxChildren": 3,
         "maxChildrenAge": 5,
-        "isBooked": false,
-        "room": 1,
-        "id": 74
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Uddin Mansion - Apartment",
@@ -972,9 +824,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 3,
         "maxChildren": 3,
         "maxChildrenAge": 5,
-        "isBooked": false,
-        "room": 1,
-        "id": 75
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Aminvilla resort",
@@ -985,9 +835,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 3,
         "maxChildren": 3,
         "maxChildrenAge": 5,
-        "isBooked": false,
-        "room": 1,
-        "id": 76
+        "isBooked": false, "room": 1,
     },
     {
         "title": "The Grand Hotel BD",
@@ -998,9 +846,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 3,
         "maxChildren": 3,
         "maxChildrenAge": 5,
-        "isBooked": false,
-        "room": 1,
-        "id": 77
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Hotel River View",
@@ -1011,9 +857,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 3,
         "maxChildren": 3,
         "maxChildrenAge": 5,
-        "isBooked": false,
-        "room": 1,
-        "id": 78
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Holy Inn Sylhet",
@@ -1024,9 +868,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 3,
         "maxChildren": 3,
         "maxChildrenAge": 5,
-        "isBooked": false,
-        "room": 1,
-        "id": 79
+        "isBooked": false, "room": 1,
     },
     {
         "title": "ApartmenT - Homestays",
@@ -1037,9 +879,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 3,
         "maxChildren": 3,
         "maxChildrenAge": 5,
-        "isBooked": false,
-        "room": 1,
-        "id": 80
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Hotel Grand Akther Sylhet",
@@ -1050,9 +890,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 3,
         "maxChildren": 3,
         "maxChildrenAge": 5,
-        "isBooked": false,
-        "room": 1,
-        "id": 81
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Nirvana Inn",
@@ -1063,9 +901,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 3,
         "maxChildren": 3,
         "maxChildrenAge": 5,
-        "isBooked": false,
-        "room": 1,
-        "id": 82
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Hotel Noorjahan Grand",
@@ -1076,9 +912,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 3,
         "maxChildren": 3,
         "maxChildrenAge": 5,
-        "isBooked": false,
-        "room": 1,
-        "id": 83
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Hotel Grand Shah Kamal",
@@ -1089,9 +923,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 3,
         "maxChildren": 3,
         "maxChildrenAge": 5,
-        "isBooked": false,
-        "room": 1,
-        "id": 84
+        "isBooked": false, "room": 1,
     },
     {
         "title": "White House Resort",
@@ -1102,9 +934,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 3,
         "maxChildren": 3,
         "maxChildrenAge": 5,
-        "isBooked": false,
-        "room": 1,
-        "id": 85
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Hotel Supreme",
@@ -1115,9 +945,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 3,
         "maxChildren": 3,
         "maxChildrenAge": 5,
-        "isBooked": false,
-        "room": 1,
-        "id": 86
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Hotel Ali Plaza",
@@ -1128,9 +956,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 3,
         "maxChildren": 3,
         "maxChildrenAge": 5,
-        "isBooked": false,
-        "room": 1,
-        "id": 87
+        "isBooked": false, "room": 1,
     },
     {
         "title": "W Hotel",
@@ -1141,9 +967,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 3,
         "maxChildren": 3,
         "maxChildrenAge": 5,
-        "isBooked": false,
-        "room": 1,
-        "id": 88
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Jatra Flagship Sylhet City Centre",
@@ -1154,9 +978,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 3,
         "maxChildren": 3,
         "maxChildrenAge": 5,
-        "isBooked": false,
-        "room": 1,
-        "id": 89
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Hotel Metro International",
@@ -1167,9 +989,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 3,
         "maxChildren": 3,
         "maxChildrenAge": 5,
-        "isBooked": false,
-        "room": 1,
-        "id": 90
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Hotel Valley Garden",
@@ -1180,9 +1000,7 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 3,
         "maxChildren": 3,
         "maxChildrenAge": 5,
-        "isBooked": false,
-        "room": 1,
-        "id": 91
+        "isBooked": false, "room": 1,
     },
     {
         "title": "Hotel Holy Gate",
@@ -1193,10 +1011,9 @@ export const HOTELS: Hotel[] = [
         "maxAdultPerson": 3,
         "maxChildren": 3,
         "maxChildrenAge": 5,
-        "isBooked": false,
-        "room": 1,
-        "id": 92
+        "isBooked": false, "room": 1,
     },
+
     {
         "title": "The Grand Hotel BD",
         "cityName": "Sylhet",
@@ -1207,8 +1024,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 3,
         "maxChildrenAge": 5,
         "isBooked": false,
-        "room": 2,
-        "id": 93
+        "room": 2
     },
     {
         "title": "Holiday Home in Khastobir Sylhet Town",
@@ -1220,8 +1036,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 3,
         "maxChildrenAge": 5,
         "isBooked": false,
-        "room": 2,
-        "id": 94
+        "room": 2
     },
     {
         "title": "W Hotel",
@@ -1233,8 +1048,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 3,
         "maxChildrenAge": 5,
         "isBooked": false,
-        "room": 2,
-        "id": 95
+        "room": 2
     },
     {
         "title": "Hotel River View",
@@ -1246,8 +1060,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 3,
         "maxChildrenAge": 5,
         "isBooked": false,
-        "room": 2,
-        "id": 96
+        "room": 2
     },
     {
         "title": "Holy Inn Sylhet",
@@ -1259,8 +1072,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 3,
         "maxChildrenAge": 5,
         "isBooked": false,
-        "room": 2,
-        "id": 97
+        "room": 2
     },
     {
         "title": "Alom Manzil - 4 Bedroom Family Home",
@@ -1272,8 +1084,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 3,
         "maxChildrenAge": 5,
         "isBooked": false,
-        "room": 2,
-        "id": 98
+        "room": 2
     },
     {
         "title": "Hotel Metro International",
@@ -1285,8 +1096,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 3,
         "maxChildrenAge": 5,
         "isBooked": false,
-        "room": 2,
-        "id": 99
+        "room": 2
     },
     {
         "title": "Sheikh Vila",
@@ -1298,8 +1108,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 3,
         "maxChildrenAge": 5,
         "isBooked": false,
-        "room": 2,
-        "id": 100
+        "room": 2
     },
     {
         "title": "Hotel Grand Akther Sylhet",
@@ -1311,8 +1120,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 3,
         "maxChildrenAge": 5,
         "isBooked": false,
-        "room": 2,
-        "id": 101
+        "room": 2
     },
     {
         "title": "Hotel Mira Garden",
@@ -1324,8 +1132,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 3,
         "maxChildrenAge": 5,
         "isBooked": false,
-        "room": 2,
-        "id": 102
+        "room": 2
     },
     {
         "title": "Moshahid Ali House",
@@ -1337,8 +1144,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 3,
         "maxChildrenAge": 5,
         "isBooked": false,
-        "room": 2,
-        "id": 103
+        "room": 2
     },
     {
         "title": "Sunapur Mini Resort Sylhet",
@@ -1350,8 +1156,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 3,
         "maxChildrenAge": 5,
         "isBooked": false,
-        "room": 2,
-        "id": 104
+        "room": 2
     },
     {
         "title": "Nirvana Inn",
@@ -1363,8 +1168,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 3,
         "maxChildrenAge": 5,
         "isBooked": false,
-        "room": 2,
-        "id": 105
+        "room": 2
     },
     {
         "title": "Hotel Holy Gate",
@@ -1376,8 +1180,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 3,
         "maxChildrenAge": 5,
         "isBooked": false,
-        "room": 2,
-        "id": 106
+        "room": 2
     },
     {
         "title": "Hotel Noorjahan Grand",
@@ -1389,8 +1192,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 3,
         "maxChildrenAge": 5,
         "isBooked": false,
-        "room": 2,
-        "id": 107
+        "room": 2
     },
     {
         "title": "Kumar Para Deluxe Villa",
@@ -1402,8 +1204,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 3,
         "maxChildrenAge": 5,
         "isBooked": false,
-        "room": 2,
-        "id": 108
+        "room": 2
     },
     {
         "title": "Hotel Crystal Rose",
@@ -1415,8 +1216,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 3,
         "maxChildrenAge": 5,
         "isBooked": false,
-        "room": 2,
-        "id": 109
+        "room": 2
     },
     {
         "title": "Mirabazar",
@@ -1428,8 +1228,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 3,
         "maxChildrenAge": 5,
         "isBooked": false,
-        "room": 2,
-        "id": 110
+        "room": 2
     },
     {
         "title": "Uddin Mansion - Apartment",
@@ -1441,8 +1240,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 3,
         "maxChildrenAge": 5,
         "isBooked": false,
-        "room": 2,
-        "id": 111
+        "room": 2
     },
     {
         "title": "Hotel Grand Shah Kamal",
@@ -1454,8 +1252,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 3,
         "maxChildrenAge": 5,
         "isBooked": false,
-        "room": 2,
-        "id": 112
+        "room": 2
     },
     {
         "title": "Aminvilla resort",
@@ -1467,8 +1264,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 3,
         "maxChildrenAge": 5,
         "isBooked": false,
-        "room": 2,
-        "id": 113
+        "room": 2
     },
     {
         "title": "White House Resort",
@@ -1480,8 +1276,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 3,
         "maxChildrenAge": 5,
         "isBooked": false,
-        "room": 2,
-        "id": 114
+        "room": 2
     },
     {
         "title": "Hotel Supreme",
@@ -1493,8 +1288,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 3,
         "maxChildrenAge": 5,
         "isBooked": false,
-        "room": 2,
-        "id": 115
+        "room": 2
     },
     {
         "title": "Grand Sylhet Hotel & Resort",
@@ -1506,8 +1300,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 3,
         "maxChildrenAge": 5,
         "isBooked": false,
-        "room": 2,
-        "id": 116
+        "room": 2
     },
     {
         "title": "Grand Mostafa Hotel Ababil",
@@ -1519,8 +1312,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 3,
         "maxChildrenAge": 5,
         "isBooked": false,
-        "room": 2,
-        "id": 117
+        "room": 2
     },
     {
         "title": "Reem Resort",
@@ -1532,8 +1324,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 0,
         "maxChildrenAge": 0,
         "isBooked": false,
-        "room": 1,
-        "id": 118
+        "room": 1
     },
     {
         "title": "Hotel Golden Hill",
@@ -1545,8 +1336,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 0,
         "maxChildrenAge": 0,
         "isBooked": false,
-        "room": 1,
-        "id": 119
+        "room": 1
     },
     {
         "title": "Hotel Auster echo",
@@ -1558,8 +1348,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 0,
         "maxChildrenAge": 0,
         "isBooked": false,
-        "room": 1,
-        "id": 120
+        "room": 1
     },
     {
         "title": "Cox Beach Resort",
@@ -1571,8 +1360,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 0,
         "maxChildrenAge": 0,
         "isBooked": false,
-        "room": 1,
-        "id": 121
+        "room": 1
     },
     {
         "title": "Fu Wang Dominous Resort",
@@ -1584,8 +1372,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 0,
         "maxChildrenAge": 0,
         "isBooked": false,
-        "room": 1,
-        "id": 122
+        "room": 1
     },
     {
         "title": "Shahjadi Resort",
@@ -1597,8 +1384,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 0,
         "maxChildrenAge": 0,
         "isBooked": false,
-        "room": 1,
-        "id": 123
+        "room": 1
     },
     {
         "title": "Hotel Sea Queen",
@@ -1610,8 +1396,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 0,
         "maxChildrenAge": 0,
         "isBooked": false,
-        "room": 1,
-        "id": 124
+        "room": 1
     },
     {
         "title": "Hotel Lighthouse Family Retreat",
@@ -1623,8 +1408,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 0,
         "maxChildrenAge": 0,
         "isBooked": false,
-        "room": 1,
-        "id": 125
+        "room": 1
     },
     {
         "title": "Grand Beach Resort",
@@ -1636,8 +1420,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 0,
         "maxChildrenAge": 0,
         "isBooked": false,
-        "room": 1,
-        "id": 126
+        "room": 1
     },
     {
         "title": "Hotel Asia",
@@ -1649,8 +1432,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 0,
         "maxChildrenAge": 0,
         "isBooked": false,
-        "room": 1,
-        "id": 127
+        "room": 1
     },
     {
         "title": "Elite Cox's Resort",
@@ -1662,8 +1444,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 0,
         "maxChildrenAge": 0,
         "isBooked": false,
-        "room": 1,
-        "id": 128
+        "room": 1
     },
     {
         "title": "Laguna Beach Hotel & Resort",
@@ -1675,8 +1456,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 0,
         "maxChildrenAge": 0,
         "isBooked": false,
-        "room": 1,
-        "id": 129
+        "room": 1
     },
     {
         "title": "Hotel Reyadha International",
@@ -1688,8 +1468,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 0,
         "maxChildrenAge": 0,
         "isBooked": false,
-        "room": 1,
-        "id": 130
+        "room": 1
     },
     {
         "title": "Hotel Sea Alif",
@@ -1701,8 +1480,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 0,
         "maxChildrenAge": 0,
         "isBooked": false,
-        "room": 1,
-        "id": 131
+        "room": 1
     },
     {
         "title": "Hotel Bay Wonders",
@@ -1714,8 +1492,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 0,
         "maxChildrenAge": 0,
         "isBooked": false,
-        "room": 1,
-        "id": 132
+        "room": 1
     },
     {
         "title": "Mohammadia Guest House",
@@ -1727,8 +1504,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 0,
         "maxChildrenAge": 0,
         "isBooked": false,
-        "room": 1,
-        "id": 133
+        "room": 1
     },
     {
         "title": "Hotel Silver Bay",
@@ -1740,8 +1516,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 0,
         "maxChildrenAge": 0,
         "isBooked": false,
-        "room": 1,
-        "id": 134
+        "room": 1
     },
     {
         "title": "Hotel Shams Plaza",
@@ -1753,8 +1528,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 0,
         "maxChildrenAge": 0,
         "isBooked": false,
-        "room": 1,
-        "id": 135
+        "room": 1
     },
     {
         "title": "Hotel Marine Plaza",
@@ -1766,8 +1540,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 0,
         "maxChildrenAge": 0,
         "isBooked": false,
-        "room": 1,
-        "id": 136
+        "room": 1
     },
     {
         "title": "Bashati Bay Resort",
@@ -1779,8 +1552,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 0,
         "maxChildrenAge": 0,
         "isBooked": false,
-        "room": 1,
-        "id": 137
+        "room": 1
     },
     {
         "title": "Hotel Arcane",
@@ -1792,8 +1564,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 0,
         "maxChildrenAge": 0,
         "isBooked": false,
-        "room": 1,
-        "id": 138
+        "room": 1
     },
     {
         "title": "Hotel Opera Ocean",
@@ -1805,8 +1576,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 0,
         "maxChildrenAge": 0,
         "isBooked": false,
-        "room": 1,
-        "id": 139
+        "room": 1
     },
     {
         "title": "Hotel Vista Bay",
@@ -1818,8 +1588,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 0,
         "maxChildrenAge": 0,
         "isBooked": false,
-        "room": 1,
-        "id": 140
+        "room": 1
     },
     {
         "title": "Hotel Sea Cox",
@@ -1831,8 +1600,7 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 0,
         "maxChildrenAge": 0,
         "isBooked": false,
-        "room": 1,
-        "id": 141
+        "room": 1
     },
     {
         "title": "Rain View Resort",
@@ -1844,9 +1612,8 @@ export const HOTELS: Hotel[] = [
         "maxChildren": 0,
         "maxChildrenAge": 0,
         "isBooked": false,
-        "room": 1,
-        "id": 142
+        "room": 1
     }
-]
 
+]
 

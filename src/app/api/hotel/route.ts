@@ -1,10 +1,10 @@
 import { HOTELS } from "@/data/mock-api/hotels";
-import { Hotel } from "@/types";
+import { Hotel, Pagination } from "@/types";
+
 
 import { NextRequest, NextResponse } from "next/server";
 export async function GET(request: NextRequest) {
     try {
-        const pageSize = 10;
         const city = request.nextUrl.searchParams.get('city');
         const checkInDate = request.nextUrl.searchParams.get('checkInDate');
         const checkOutDate = request.nextUrl.searchParams.get('checkOutDate');
@@ -20,38 +20,47 @@ export async function GET(request: NextRequest) {
         page = !isNaN(page) && page !== null ? parseInt(page) : 1;
         let minRange: any = request.nextUrl.searchParams.get('minRange') ?? "0";
         minRange = !isNaN(minRange) && minRange !== null ? parseInt(minRange) : 1;
-        let maxRange: any = request.nextUrl.searchParams.get('maxRange')
-        console.log('url', maxRange);
+        let maxRange: any = request.nextUrl.searchParams.get('maxRange');
+        let rating: any = request.nextUrl.searchParams.get('ratings');
         const hotels: Hotel[] = HOTELS
-            .filter(
-                hotel => {
-                    if (hotel.cityName.toLocaleLowerCase().includes(city?.toLocaleLowerCase() ?? '')
-                        &&
-                        hotel.isBooked === false && hotel.price >= minRange) {
-                        if (maxRange && maxRange > minRange ) {
-                            return hotel.price <= maxRange;
-                        }else{
-                            return hotel;
-                        }
-                    }
+            .filter(hotel => {
+                let selectHotel = true;
+                if (hotel.isBooked) {
+                    selectHotel = false;
                 }
-            ).sort((a, b) => {
-                if (desc) {
-                    return b.price - a.price
-                } else {
-                    return a.price - b.price
+                if (!hotel.cityName.toLocaleLowerCase().includes(city?.toLocaleLowerCase() ?? '')) {
+                    selectHotel = false;
                 }
-            });
+                if (minRange && hotel.price < minRange) {
+                    return selectHotel = false;
+                }
+                if (maxRange && hotel.price > maxRange) {
+                    return selectHotel = false;
+                }
+                if (adult && hotel.maxAdultPerson !== adult) {
+                    return selectHotel = false;
+                }
+                if (children && hotel.maxChildren > children) {
+                    return selectHotel = false;
+                }
+                if (room && hotel.room !== room) {
+                    return selectHotel = false;
+                }
+                if (rating && rating > 0 && hotel.review && hotel.review < rating) {
+                    return selectHotel = false;
+                }
+                return selectHotel;
+            })
 
-        const dataList = hotels ? hotels.slice(page * pageSize, (page + 1) * pageSize) : [];
-
-        // &&
-        // hotel.room <= room
-        // &&
-        // hotel.maxAdultPerson <= adult
-        // &&
-        // hotel.maxChildren <= children
-        return NextResponse.json({ data: dataList, status: 200 });
+        if (desc === 1) {
+            hotels.sort((a, b) => b.price - a.price);
+        } else {
+            hotels.sort((a, b) => a.price - b.price);
+        }
+        const pageSize = 10;
+        const startIndex = (page - 1) * pageSize;
+        const dataList = hotels.slice(startIndex, startIndex + pageSize);
+        return NextResponse.json({ data: dataList, status: 200, total: hotels.length, from: startIndex, to: startIndex + dataList.length });
     } catch (e) {
         return NextResponse.json({ error: e, status: 500 })
     }

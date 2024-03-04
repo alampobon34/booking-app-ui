@@ -11,7 +11,7 @@ export interface Currency {
 }
 
 
-export interface HotelSearchParams{
+export interface HotelSearchParams {
     city: string;
     checkInDate: string;
     checkOutDate: string;
@@ -21,8 +21,23 @@ export interface HotelSearchParams{
     desc: number;
     page: number | null;
     minRange: number | null;
-    maxRange: number | null
+    maxRange: number | null;
+    ratings: number | null;
 
+}
+
+export interface FlightSearchParams {
+    departureCity: string;
+    arrivalCity: string;
+    departureDate: string;
+    returnDate: string | null;
+    adult: number;
+    children: number;
+    desc: number;
+    page: number | null;
+    minRange: number | null;
+    maxRange: number | null;
+    airLinesName: string;
 }
 
 
@@ -56,6 +71,7 @@ export interface City {
 
 
 export interface Hotel {
+    id: number;
     title: string;
     cityName: string;
     price: number;
@@ -66,4 +82,27 @@ export interface Hotel {
     maxChildren: number;
     maxChildrenAge: number;
     room: number;
+}
+
+export interface Flight {
+    airLinesName: string;
+    departureCity: string;
+    departureDate: string;
+    departureTime: string;
+    arrivalCity: string;
+    arrivalTime: string;
+    returnDate: string | null;
+    adult: number;
+    children: number;
+    flightType: string;
+    imageUrl: string;
+    price: number
+}
+
+
+export interface Pagination {
+    status: number;
+    total: number;
+    from: number;
+    to: number;
 }
