@@ -8,32 +8,25 @@ interface Prop {
   flight: Flight
 }
 
-const getDateFormat = (num: number) => {
-  const date = new Date(num);
-  // const dayOfWeek = DAYS[date.getDay()];
-  const dayOfMonth = date.getDate();
-  // const monthName = MONTHS[date.getMonth()];
-  const year = date.getFullYear();
-  // const fullDate = `${dayOfWeek}, ${dayOfMonth} ${monthName} ${year}`;
-  // return fullDate;
-};
 
-const getTimeDifference = (MSTime: number) => {
-  const seconds = Math.floor(MSTime / 1000);
-  const minutes = Math.floor(seconds / 60);
-  const hours = Math.floor(minutes / 60);
-  const time = `${hours}h ${minutes % 60}m`;
-  return time;
-};
+const getHourDifference = (time1: string, time2: string) => {
+  let date1: any = new Date("1970-01-01T" + time1 + "Z");
+  let date2: any = new Date("1970-01-01T" + time2 + "Z");
+  let timeDiffMilliseconds = date2 - date1;
+  let hours = Math.floor(timeDiffMilliseconds / 3600000);
+  let minutes = Math.floor((timeDiffMilliseconds % 3600000) / 60000);
+  let seconds = Math.floor((timeDiffMilliseconds % 60000) / 1000);
+  return `${hours}h ${minutes}m`;
+}
 
 const FlightCard = ({ flight }: Prop) => {
 
   return (
-    <div className="w-full flex flex-col md:flex-row items-center justify-between gap-2 bg-white rounded p-4 border mb-3">
-      <div className="flex flex-col items-center justify-center gap-2 w-full md:w-[20%] border">
+    <div className="w-full flex flex-col md:flex-row items-center justify-between gap-2 bg-white rounded-xl p-4 border mb-3">
+      <div className="flex flex-col items-center justify-center gap-2 w-full md:w-[20%]">
         <Image
           className="object-contain"
-          src='/assets/01.jpg'
+          src={flight.imageUrl}
           height={60}
           width={60}
           alt=""
@@ -44,19 +37,11 @@ const FlightCard = ({ flight }: Prop) => {
         <div className="flex justify-between w-full md:flex-col">
           <p className="text-[14px] text-custom-black-600">Departure</p>
           <p className="font-bold text-[14px] text-custom-black-900">
-            date
-            {/* {item.arrivalDate.toLocaleTimeString([], {
-              hour: "2-digit",
-              minute: "2-digit",
-              hour12: false,
-            })} */}
+            {flight.departureTime}
           </p>
         </div>
         <p className="text-[14px] text-custom-black-600">
-          date
-          {/* {getDateFormat(
-            new Date(item.arrivalDate).setDate(item.arrivalDate.getDate())
-          )} */}
+          {flight.departureDate}
         </p>
       </div>
 
@@ -64,15 +49,12 @@ const FlightCard = ({ flight }: Prop) => {
         <Image src="assets/icons/plane.svg" height={16} width={16} alt="" />
         <div>
           <p className="text-center text-[12px] text-custom-black-600">
-            date
-            {/* {getTimeDifference(
-              new Date(item.departureDate).setDate(
-                item.departureDate.getDate() + 20
-              ) - new Date(item.arrivalDate).setDate(item.arrivalDate.getDate())
-            )} */}
+            {
+              getHourDifference(flight.departureTime, flight.arrivalTime)
+            }
           </p>
           <p>------------------------------</p>
-          <p className="text-center text-[12px] text-custom-black-600">1 Stop</p>
+          <p className="text-center text-[12px] text-custom-black-600">{flight.flightType}</p>
         </div>
         <Image
           src="assets/icons/plane-landing.svg"
@@ -86,25 +68,17 @@ const FlightCard = ({ flight }: Prop) => {
         <div className="flex justify-between w-full md:flex-col">
           <p className="text-[14px] text-custom-black-600">Arrive</p>
           <p className="font-bold text-[14px] text-custom-black-900">
-            date
-            {/* {item.arrivalDate.toLocaleTimeString([], {
-              hour: "2-digit",
-              minute: "2-digit",
-              hour12: false,
-            })} */}
+            {flight.arrivalTime}
           </p>
         </div>
         <p className="text-[14px] text-custom-black-600">
-          DDD
-          {/* {getDateFormat(
-            new Date(flight.arrivalDate).setDate(item.arrivalDate.getDate())
-          )} */}
+          {flight.arrivalDate}
         </p>
       </div>
 
-      <div className="flex flex-col justify-center items-center md:items-end h-full md:w-[15%] border">
+      <div className="flex flex-col justify-center items-center md:items-end h-full md:w-[15%]">
         <p className="text-md mb-2 text-end md:text-center">
-          BDT <span className='font-bold text-[20px]'>8200</span>
+          BDT <span className='font-bold text-[20px]'>{flight.price}</span>
         </p>
         <Button
           name="Book Now"

@@ -259,7 +259,7 @@ const SearchForm = () => {
                                         <select className='w-full outline-none py-3 bg-transparent rounded-md' id='departureCity' name='departureCity' value={flightForm.departureCity} onChange={(e) => setFlightForm({ ...flightForm, departureCity: e.target.value })}>
                                             <option value="" selected>--departure-city--</option>
                                             {
-                                                cities && cities.map((city, index) => <option key={index} value={city.cityName.toLocaleLowerCase()}>{city.cityName}</option>)
+                                                cities && cities.map((city, index) => <option key={index} value={city.value.toLocaleLowerCase()}>{city.cityName}</option>)
                                             }
                                         </select>
                                     </div>
@@ -269,7 +269,7 @@ const SearchForm = () => {
                                         <select className='w-full outline-none py-3 bg-transparent rounded-md' id='arrivalCity' name='arrivalCity' value={flightForm.arrivalCity} onChange={(e) => setFlightForm({ ...flightForm, arrivalCity: e.target.value })}>
                                             <option value="" selected>--arrival-city--</option>
                                             {
-                                                cities && cities.map((city, index) => <option key={index} value={city.cityName.toLocaleLowerCase()}>{city.cityName}</option>)
+                                                cities && cities.map((city, index) => <option key={index} value={city.value.toLocaleLowerCase()}>{city.cityName}</option>)
                                             }
                                         </select>
                                     </div>

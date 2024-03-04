@@ -21,7 +21,7 @@ interface Props {
 
 
 const FlightSearch = ({ searchParams, flightList, airLinesList }: Props) => {
-    console.log(flightList);
+    // console.log(flightList);
     const router = useRouter();
     const [searchParam, setSearchParam] = useState<FlightSearchParams>(searchParams);
     const [currentPage, setCurrentPage] = useState<number>(1);
@@ -66,7 +66,7 @@ const FlightSearch = ({ searchParams, flightList, airLinesList }: Props) => {
                 </div>
                 <div className='w-full md:w-3/4 flex justify-end md:justify-between items-center flex-1'>
                     <div className='flex-1'>
-                        {/* <h1 className='hidden md:block text-lg md:text-xl font-bold'>{searchParam.city ? searchParam.city.toUpperCase() : ''} : {flightList.data && flightList.total ? flightList.total : ''} Records Found.</h1> */}
+                        <h1 className='hidden md:block text-lg md:text-xl font-bold'>{searchParam.departureCity ? searchParam.departureCity.toUpperCase() : ''} : {flightList.data && flightList.total ? flightList.total : ''} Records Found.</h1>
                     </div>
                     <select value={desc} onChange={handleDesc} className="border p-2 rounded-md outline-none text-sm">
                         <option className='text-sm' value="0">Low-High</option>
@@ -98,7 +98,7 @@ const FlightSearch = ({ searchParams, flightList, airLinesList }: Props) => {
                         </div>
 
                         <div className='flex flex-col gap-2 bg-white rounded-lg py-3'>
-                            <h1 className='pl-2 text-lg font-semibold'>Ratings</h1>
+                            <h1 className='pl-2 text-lg font-semibold'>Airlines</h1>
                             <div className="flex flex-col gap-3 px-2">
                                 {
                                     airLinesList && airLinesList.map((el, index) => <Checkbox label='' name='airLinesName' onChange={handleCheckBox} value={el} isChecked={airLinesName === el.toLowerCase()} key={index} />)

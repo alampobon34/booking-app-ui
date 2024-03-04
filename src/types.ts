@@ -66,7 +66,9 @@ export interface FlightForm {
 
 
 export interface City {
+    id: number;
     cityName: string;
+    value: string;
 }
 
 
@@ -85,15 +87,17 @@ export interface Hotel {
 }
 
 export interface Flight {
+    id: number;
     airLinesName: string;
     departureCity: string;
     departureDate: string;
     departureTime: string;
     arrivalCity: string;
+    arrivalDate: string;
     arrivalTime: string;
-    returnDate: string | null;
-    adult: number;
-    children: number;
+    returnDate?: string | null;
+    adult?: number;
+    children?: number;
     flightType: string;
     imageUrl: string;
     price: number

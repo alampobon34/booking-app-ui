@@ -2,15 +2,23 @@ import { City } from "@/types";
 
 export const CITIES: City[] = [
     {
-        cityName: "Cox's Bazar"
+        id:1,
+        cityName: "Cox's Bazar",
+        value: 'CXB',
     },
     {
-        cityName: "Dhaka"
+        id:2,
+        cityName: "Dhaka",
+        value: 'DAC',
     },
     {
-        cityName: "Sylhet"
+        id:3,
+        cityName: "Sylhet",
+        value: 'ZYL'
     },
     {
-        cityName: "Chittagong"
+        id:4,
+        cityName: "Chittagong",
+        value: 'CGP',
     }
 ];
