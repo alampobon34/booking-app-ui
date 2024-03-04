@@ -101,7 +101,7 @@ const HotelSearch = ({ searchParams, hotelList }: Props) => {
                             <h1 className='pl-2 text-lg font-semibold'>Ratings</h1>
                             <div className="flex flex-col gap-3 px-2">
                                 {
-                                    [1, 2, 3, 4, 5].map((el, index) => <Checkbox label='Star' name='rating' onChange={handleCheckBox} value={el} isChecked={rating === el} />)
+                                    [1, 2, 3, 4, 5].map((el, index) => <Checkbox key={index} label='Star' name='rating' onChange={handleCheckBox} value={el} isChecked={rating === el} />)
                                 }
                             </div>
                         </div>

@@ -101,7 +101,7 @@ const FlightSearch = ({ searchParams, flightList, airLinesList }: Props) => {
                             <h1 className='pl-2 text-lg font-semibold'>Ratings</h1>
                             <div className="flex flex-col gap-3 px-2">
                                 {
-                                    airLinesList && airLinesList.map((el, index) => <Checkbox label='' name='airLinesName' onChange={handleCheckBox} value={el} isChecked={airLinesName === el.toLowerCase()} />)
+                                    airLinesList && airLinesList.map((el, index) => <Checkbox label='' name='airLinesName' onChange={handleCheckBox} value={el} isChecked={airLinesName === el.toLowerCase()} key={index} />)
                                 }
                             </div>
                         </div>
