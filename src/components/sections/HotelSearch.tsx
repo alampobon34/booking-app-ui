@@ -123,12 +123,14 @@ const HotelSearch = ({ searchParams, hotelList }: Props) => {
             </div>
 
             <div className='flex items-center justify-between gap-3'>
-                <div className='w-full md:w-1/4'>
+                <div className='md:w-1/4'>
                 </div>
-                <div className='w-3/4 flex justify-between items-center'>
-                    <p className='text-[14px] font-semibold text-custom-black-600'>Showing {hotelList.from + 1} - {hotelList.to + 1}</p>
+                <div className='w-full md:w-3/4 flex justify-between items-center'>
+                    <div className=''>
+                        <p className='text-start text-[14px] font-semibold text-custom-black-600'>Showing {hotelList.from + 1} - {hotelList.to + 1}</p>
+                    </div>
                     <div className='flex justify-end items-center flex-1'>
-                        <div className='flex gap-2'>
+                        <div className='flex gap-6'>
                             <button disabled={hotelList.from === 0} onClick={() => { setCurrentPage(currentPage - 1); setSearchParam({ ...searchParam, page: currentPage - 1 }) }} className='hover:text-primary text-custom-black-900' type='button'>Previous</button>
                             <button disabled={hotelList.to === hotelList.total} onClick={() => { setCurrentPage(currentPage + 1); setSearchParam({ ...searchParam, page: currentPage + 1 }) }} className='hover:text-primary text-custom-black-900' type='button'>Next</button>
                         </div>

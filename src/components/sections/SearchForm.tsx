@@ -161,8 +161,8 @@ const SearchForm = () => {
     }
 
     return (
-        <div className='bg-white rounded-xl p-5 w-[90%] mx-auto border flex flex-col gap-2'>
-            <div className='flex items-center gap-3'>
+        <div className='bg-white rounded-xl p-5 w-[90%] mx-auto border flex flex-col gap-3'>
+            <div className='flex items-center gap-4'>
                 <Radio id='hotel' label='Hotel' name='formType' onChange={handleFormType} checked={formType === 'hotel'} value='hotel' />
                 <Radio id='flight' label='Flight' name='formType' onChange={handleFormType} checked={formType === 'flight'} value='flight' />
             </div>
@@ -245,7 +245,7 @@ const SearchForm = () => {
                                 <div className='w-1/4'>
                                 </div>
                             </div>
-                            <div className='w-1/4 mx-auto mt-3 -mb-9 flex justify-center'>
+                            <div className='w-1/4 mx-auto mt-4 -mb-9 flex justify-center'>
                                 <Button name='Search' type='submit' />
                             </div>
                         </form>
@@ -337,7 +337,7 @@ const SearchForm = () => {
                                 <div className='w-1/2'>
                                 </div>
                             </div>
-                            <div className='w-1/4 mx-auto mt-3 -mb-9 flex justify-center'>
+                            <div className='w-1/4 mx-auto mt-4 -mb-9 flex justify-center'>
                                 <Button name='Search' type='submit' />
                             </div>
                         </form>

@@ -9,13 +9,13 @@ interface Prop {
 
 const NavLink = ({ navLink }: Prop) => {
     return (
-        <Link className='flex items-center gap-1 nav-links' href={navLink.link}>
+        <Link className='flex items-center gap-2 nav-links' href={navLink.link}>
             <Image src={`/assets/icons/${navLink.iconName}`}
                 alt="Logo"
                 width={16}
                 height={16}
                 objectFit="contain" />
-            {navLink.name}
+            <span className='text-[16px] font-medium'>{navLink.name}</span>
         </Link>
     )
 }

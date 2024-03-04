@@ -19,7 +19,7 @@ const Hero = () => {
 
     }, [])
     return (
-        <section className="relative mb-6 md:mb-24">
+        <section className="relative md:mb-24 mb-[30px]">
             <Image src="/assets/hero.jpeg" height={360} width={1440} alt='' />
             <div className='absolute top-[2%] lg:top-[20%] left-[5%] text-white flex flex-col gap-2 lg:gap-5'>
                 <div className='flex flex-col gap-0'>

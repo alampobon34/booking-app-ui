@@ -31,7 +31,7 @@ const FlightCard = ({ flight }: Prop) => {
           width={60}
           alt=""
         />
-        <h1 className="text-sm w-3/4 text-center font-semibold">{flight.airLinesName}</h1>
+        <h1 className="text-sm w-3/4 text-center font-medium">{flight.airLinesName}</h1>
       </div>
       <div className="flex flex-col">
         <div className="flex justify-between w-full md:flex-col">
@@ -42,6 +42,9 @@ const FlightCard = ({ flight }: Prop) => {
         </div>
         <p className="text-[14px] text-custom-black-600">
           {flight.departureDate}
+        </p>
+        <p className="text-[14px] text-custom-black-600">
+          {flight.departureCity}
         </p>
       </div>
 
@@ -66,13 +69,16 @@ const FlightCard = ({ flight }: Prop) => {
 
       <div className="flex flex-col">
         <div className="flex justify-between w-full md:flex-col">
-          <p className="text-[14px] text-custom-black-600">Arrive</p>
+          <p className="text-[14px] text-custom-black-600">Arrival</p>
           <p className="font-bold text-[14px] text-custom-black-900">
             {flight.arrivalTime}
           </p>
         </div>
         <p className="text-[14px] text-custom-black-600">
           {flight.arrivalDate}
+        </p>
+        <p className="text-[14px] text-custom-black-600">
+          {flight.arrivalCity}
         </p>
       </div>
 

@@ -66,7 +66,7 @@ const FlightSearch = ({ searchParams, flightList, airLinesList }: Props) => {
                 </div>
                 <div className='w-full md:w-3/4 flex justify-end md:justify-between items-center flex-1'>
                     <div className='flex-1'>
-                        <h1 className='hidden md:block text-lg md:text-xl font-bold'>{searchParam.departureCity ? searchParam.departureCity.toUpperCase() : ''} : {flightList.data && flightList.total ? flightList.total : ''} Records Found.</h1>
+                        <h1 className='hidden md:block text-lg md:text-xl font-bold'>{searchParam.departureCity ? searchParam.departureCity.toUpperCase() : ''}-{searchParam.arrivalCity ? searchParam.arrivalCity.toUpperCase() : ''} : {flightList.data && flightList.total ? flightList.total : ''} Records Found.</h1>
                     </div>
                     <select value={desc} onChange={handleDesc} className="border p-2 rounded-md outline-none text-sm">
                         <option className='text-sm' value="0">Low-High</option>
@@ -123,12 +123,14 @@ const FlightSearch = ({ searchParams, flightList, airLinesList }: Props) => {
             </div>
 
             <div className='flex items-center justify-between gap-3'>
-                <div className='w-full md:w-1/4'>
+                <div className='md:w-1/4'>
                 </div>
-                <div className='w-3/4 flex justify-between items-center'>
-                    <p className='text-[14px] font-semibold text-custom-black-600'>Showing {flightList.from + 1} - {flightList.to + 1}</p>
+                <div className='w-full md:w-3/4 flex justify-between items-center'>
+                    <div className=''>
+                        <p className='text-start text-[14px] font-semibold text-custom-black-600 border'>Showing {flightList.from + 1} - {flightList.to + 1}</p>
+                    </div>
                     <div className='flex justify-end items-center flex-1'>
-                        <div className='flex gap-2'>
+                        <div className='flex gap-6'>
                             <button disabled={flightList.from === 0} onClick={() => { setCurrentPage(currentPage - 1); setSearchParam({ ...searchParam, page: currentPage - 1 }) }} className='hover:text-primary text-custom-black-900' type='button'>Previous</button>
                             <button disabled={flightList.to === flightList.total} onClick={() => { setCurrentPage(currentPage + 1); setSearchParam({ ...searchParam, page: currentPage + 1 }) }} className='hover:text-primary text-custom-black-900' type='button'>Next</button>
                         </div>

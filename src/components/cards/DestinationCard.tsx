@@ -21,10 +21,10 @@ const DestinationCard = ({ title, packages, price, image }: Props) => {
                     objectFit="container"
                 />
             </div>
-            <div className=" flex flex-col gap-2">
+            <div className=" flex flex-col gap-1">
                 <h1 className="text-lg font-bold text-custom-black-900 mt-2">{title}</h1>
                 <div className="flex gap-1 items-center">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-custom-black-900">
                         <Image
                             src="/assets/icons/calender.svg"
                             alt="img"
@@ -36,7 +36,9 @@ const DestinationCard = ({ title, packages, price, image }: Props) => {
                     </div>
                 </div>
                 <div className="flex">
-                    <span>Starting from <b>BDT {price}/=</b></span>
+                    <p className="text-[16px]">
+                        BDT <span className='font-semibold text-[18px] text-custom-black-900'>{price}</span>
+                    </p>
                 </div>
             </div>
         </div>

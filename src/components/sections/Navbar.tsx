@@ -15,13 +15,13 @@ const Navbar = () => {
     }
 
     return (
-        <nav className='w-full h-12 sticky top-0 bg-white py-2 z-50 border-b'>
+        <nav className='w-full h-14 sticky top-0 bg-white py-3 z-50 border-b'>
             <div className='flex justify-between items-center container'>
                 <div>
                     <Link className='text-2xl font-bold text-primary' href="/">BOOKING.APP</Link>
                 </div>
 
-                <div className='hidden md:flex items-center gap-6'>
+                <div className='hidden md:flex items-center gap-8'>
                     {
                         NAVLINKS.map((navLink, index) => <NavLink navLink={navLink} key={index} />)
                     }
@@ -41,7 +41,7 @@ const Navbar = () => {
                     </div>
 
                     <div>
-                        
+
                     </div>
                 </div>
             </div>

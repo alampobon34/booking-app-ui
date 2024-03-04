@@ -5,7 +5,7 @@ import Button from '../buttons/Button'
 
 const Offer = () => {
     return (
-        <div className="flex flex-col gap-4 py-8">
+        <div className="flex flex-col gap-4 py-[30px]">
             <Title title="Offers" />
             <div className="bg-[url('/assets/offer.jpg')] bg-no-repeat bg-cover bg-center rounded-xl text-white">
                 {/* <Image src="/assets/offer.jpg" height={360} width={1440} alt='' /> */}

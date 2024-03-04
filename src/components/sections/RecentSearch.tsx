@@ -35,7 +35,7 @@ const RecentSearch = () => {
         getLocal();
     }, [])
     return (
-        <div className="flex flex-col gap-4 py-10">
+        <div className="flex flex-col gap-4 pb-[30px] pt-[45px]">
             <div className='flex justify-between items-center'>
                 <Title title="Your Bookmark List" />
                 <div>
@@ -46,7 +46,7 @@ const RecentSearch = () => {
                 </div>
             </div>
             <div style={{ scrollbarWidth: "none" }} id='recent-search' className='w-full h-full whitespace-nowrap overflow-x-scroll scroll-smooth no-scrollbar'>
-                {searchResult && searchResult.map((item, index) => {
+                {searchResult && searchResult.slice(0).reverse().map((item, index) => {
                     return (
                         <RecentSearchCard key={item.id} item={item} />
                     );
