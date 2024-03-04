@@ -1,7 +1,7 @@
 
-Project: Hotel/Flight Booking
+**Project: Hotel/Flight Booking**
 
-This Project is built on Nextjs 13. A few dependencies have been used such as Axios. react-icons. For the API integration,, this project used the Nextjs 13 route API. Also this project covers the dynamic search based on the user-given input. 
+This project is built on top of Nextjs 13 (TypeScript). React-icons and Axios are two examples of dependencies that have been used. The Nextjs 13 route API was applied in this project to integrate APIs. One of the task features of this one is a user-inputted dynamic search. The forms covers Validation of the Two Separated Forms. after validating the data entered by the user in the state, obtaining the response from the backend, and combining the CSR and SSR to display results.
 
 **Environment Variables Name:**
 
