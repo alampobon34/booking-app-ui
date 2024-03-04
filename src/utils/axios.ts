@@ -14,8 +14,9 @@ interface ApiResponseWithPagination<T> {
   to: number;
 }
 
+const BACKEND_API_URL = process.env.NEXT_PUBLIC_BASE_API_URL + '/api';
 // const BACKEND_API_URL = 'http://localhost:3000/api';
-const BACKEND_API_URL = 'https://booking-app-ui-chi.vercel.app/api';
+// const BACKEND_API_URL = 'https://booking-app-ui-chi.vercel.app/api';
 
 const api = axios.create({
   baseURL: BACKEND_API_URL,
