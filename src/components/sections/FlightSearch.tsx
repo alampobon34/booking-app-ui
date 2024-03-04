@@ -14,13 +14,14 @@ interface Data extends Pagination {
 
 interface Props {
     searchParams: FlightSearchParams;
-    flightList: Data
+    flightList: Data;
+    airLinesList: string[];
 }
 
 
 
-const FlightSearch = ({ searchParams, flightList }: Props) => {
-    console.log(searchParams);
+const FlightSearch = ({ searchParams, flightList, airLinesList }: Props) => {
+    console.log(flightList);
     const router = useRouter();
     const [searchParam, setSearchParam] = useState<FlightSearchParams>(searchParams);
     const [currentPage, setCurrentPage] = useState<number>(1);
@@ -50,12 +51,12 @@ const FlightSearch = ({ searchParams, flightList }: Props) => {
     const handleCheckBox = (event: React.ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value;
         const checked = event.target.checked;
-        setSearchParam({ ...searchParam, airLinesName: checked ? value : '' })
-        setAirLinesName(checked ? value : '');
+        setSearchParam({ ...searchParam, airLinesName: checked ? value.toLowerCase() : '' })
+        setAirLinesName(checked ? value.toLowerCase() : '');
     }
 
     useEffect(() => {
-        router.push(`/flight/?departureCity=${searchParams.departureCity}&arrivalCity=${searchParams.arrivalCity}&departureDate=${searchParams.departureDate}&returnDate=${searchParams.returnDate}&adult=${searchParams.adult}&children=${searchParams.children}&desc=${desc}&page=${currentPage}&minRange=${minValue}&maxRange=${maxValue}&airLinesName=${airLinesName??''}`);
+        router.push(`/flight/?departureCity=${searchParams.departureCity}&arrivalCity=${searchParams.arrivalCity}&departureDate=${searchParams.departureDate}&returnDate=${searchParams.returnDate}&adult=${searchParams.adult}&children=${searchParams.children}&desc=${desc}&page=${currentPage}&minRange=${minValue}&maxRange=${maxValue}&airLinesName=${airLinesName ?? ''}`);
     }, [searchParam])
     return (
         <div className='w-full flex flex-col py-4 gap-2'>
@@ -100,7 +101,7 @@ const FlightSearch = ({ searchParams, flightList }: Props) => {
                             <h1 className='pl-2 text-lg font-semibold'>Ratings</h1>
                             <div className="flex flex-col gap-3 px-2">
                                 {
-                                    [1, 2, 3, 4, 5].map((el, index) => <Checkbox label='Star' name='rating' onChange={handleCheckBox} value={el} isChecked={airLinesName === "" + el} />)
+                                    airLinesList && airLinesList.map((el, index) => <Checkbox label='' name='airLinesName' onChange={handleCheckBox} value={el} isChecked={airLinesName === el.toLowerCase()} />)
                                 }
                             </div>
                         </div>
