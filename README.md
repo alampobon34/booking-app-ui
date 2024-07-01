@@ -15,3 +15,10 @@ One of the task features of this one is a user-inputted dynamic search. The form
   1. Departure City -> Dhaka, Arrival City -> Sylhet, Departure Date -> 2024-04-20, adult -> 2, children -> 2.
   3. Departure City -> Dhaka, Arrival City -> Chittagong, Departure Date -> 2024-03-10, adult -> 1, children -> 0.
 
+**For Install Locally:
+1. Clone this repository
+2. cd into the project folder
+3. run npm/yarn install
+4. then npm run dev
+5. see the output on http://localhost:3000/
+
