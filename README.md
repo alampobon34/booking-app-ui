@@ -1,8 +1,14 @@
 
 **Project: Hotel/Flight Booking**
 
-This project is built on top of **Nextjs 13 (TypeScript)**. React-icons and Axios are two examples of dependencies that have been used. There is no Live API available in the project but for JSON data a customer placeholder has been used. Focusing on the front end, the Nextjs 13 Route API feature was applied in this project to integrate APIs. 
-One of the task features of this one is a user-inputted dynamic search. The forms cover the Validation of the Two Separated Forms, after validating the data entered by the user in the state, obtaining the response from the backend, and combining the CSR and SSR to display results. Also, a bookmark feature was implemented in the hotel booking section. where users can see the bookmark result in the recent views section in the front end. Filter Price Range, Ratings, Sorting by Price, and filtering by Airlines for Hotel Booking and Flight Booking are implemented in the project.
+This project is built on top of Nextjs 13 (TypeScript). React-icons and Axios are two examples of dependencies that have been used. There is no Live API available in the project but for JSON data a customer placeholder has been used. Focusing on the front end, the Nextjs 13 Route API feature was applied in this project to integrate APIs. 
+One of the task features of this one is a user-inputted dynamic search. The forms cover the Validation of the Two Separated Forms, after validating the data entered by the user in the state, obtaining the response from the backend, and combining the CSR and SSR to display results. Also, a bookmark feature was implemented in the hotel booking section. where users can see the bookmark result in the recent views section in the front end. Filter Price Range, Ratings, Sorting by Price, and filtering by Airlines for Hotel Booking and Flight Booking are implemented in the project
+
+**Technology Used-**
+1. Next JS
+2. TypeScript
+3. Axios
+4. React Icons
 
 **Environment Variables Name:**
 
